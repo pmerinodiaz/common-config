@@ -22,7 +22,7 @@ if [[ $username != "" ]]; then
 
     archivist="$TRQ_FUNDACION/archivist"
     if [ ! -d "$archivist" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/archivist.git
     else
         cd $archivist
@@ -32,7 +32,7 @@ if [[ $username != "" ]]; then
 
     backend="$TRQ_FUNDACION/backend"
     if [ ! -d "$backend" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/backend.git
     else
         cd $backend
@@ -42,7 +42,7 @@ if [[ $username != "" ]]; then
 
     beats_consumer="$TRQ_FUNDACION/beats-consumer"
     if [ ! -d "$beats_consumer" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/beats-consumer
     else
         cd $beats_consumer
@@ -52,7 +52,7 @@ if [[ $username != "" ]]; then
 
     config="$TRQ_FUNDACION/config"
     if [ ! -d "$config" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/config.git
     else
         cd $config
@@ -62,7 +62,7 @@ if [[ $username != "" ]]; then
 
     ecourse="$TRQ_FUNDACION/ecourse"
     if [ ! -d "$ecourse" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/ecourse.git
     else
         cd $ecourse
@@ -72,7 +72,7 @@ if [[ $username != "" ]]; then
 
     ef="$TRQ_FUNDACION/ef"
     if [ ! -d "$ef" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/ef.git
     else
         cd $ef
@@ -82,7 +82,7 @@ if [[ $username != "" ]]; then
 
     emac="$FCH_CHILE_SDK_FOLDER/emac"
     if [ ! -d "$emac" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/emac.git
     else
         cd $emac
@@ -92,7 +92,7 @@ if [[ $username != "" ]]; then
 
     enrichment="$FCH_CHILE_SDK_FOLDER/enrichment"
     if [ ! -d "$enrichment" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/enrichment.git
     else
         cd $enrichment
@@ -102,7 +102,7 @@ if [[ $username != "" ]]; then
 
     fake_beats="$FCH_CHILE_SDK_FOLDER/fake-beats"
     if [ ! -d "$fake_beats" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/fake-beats.git
     else
         cd $fake_beats
@@ -112,7 +112,7 @@ if [[ $username != "" ]]; then
 
     frontend="$FCH_CHILE_SDK_FOLDER/frontend"
     if [ ! -d "$frontend" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/frontend.git
     else
         cd $frontend
@@ -122,7 +122,7 @@ if [[ $username != "" ]]; then
 
     http_poller_producer="$FCH_CHILE_SDK_FOLDER/http-poller-producer"
     if [ ! -d "$http_poller_producer" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/http-poller-producer.git
     else
         cd $http_poller_producer
@@ -132,7 +132,7 @@ if [[ $username != "" ]]; then
 
     index_builder="$FCH_CHILE_SDK_FOLDER/index-builder"
     if [ ! -d "$index_builder" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/index-builder.git
     else
         cd $index_builder
@@ -142,7 +142,7 @@ if [[ $username != "" ]]; then
 
     index_test_cases="$FCH_CHILE_SDK_FOLDER/index-test-cases"
     if [ ! -d "$index_test_cases" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/index-test-cases.git
     else
         cd $index_test_cases
@@ -152,7 +152,7 @@ if [[ $username != "" ]]; then
 
     qa_load_testing="$FCH_CHILE_SDK_FOLDER/qa-load-testing"
     if [ ! -d "$qa_load_testing" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/qa-load-testing.git
     else
         cd $qa_load_testing
@@ -162,7 +162,7 @@ if [[ $username != "" ]]; then
 
     qa_snapshots="$FCH_CHILE_SDK_FOLDER/qa-snapshots"
     if [ ! -d "$qa_snapshots" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/qa-snapshots.git
     else
         cd $qa_snapshots
@@ -172,7 +172,7 @@ if [[ $username != "" ]]; then
 
     qa_testing_framework="$FCH_CHILE_SDK_FOLDER/qa-testing-framework"
     if [ ! -d "$qa_testing_framework" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/qa-testing-framework.git
     else
         cd $qa_testing_framework
@@ -182,7 +182,7 @@ if [[ $username != "" ]]; then
 
     qa_testing_framework_ci="$FCH_CHILE_SDK_FOLDER/qa-testing-framework-ci"
     if [ ! -d "$qa_testing_framework_ci" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/qa-testing-framework-ci.git
     else
         cd $qa_testing_framework_ci
@@ -192,7 +192,7 @@ if [[ $username != "" ]]; then
 
     sql_beats_producer="$FCH_CHILE_SDK_FOLDER/sql-beats-producer"
     if [ ! -d "$sql_beats_producer" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/sql-beats-producer.git
     else
         cd $sql_beats_producer
@@ -202,7 +202,7 @@ if [[ $username != "" ]]; then
 
     stack_dev_local="$FCH_CHILE_SDK_FOLDER/stack-dev-local"
     if [ ! -d "$stack_dev_local" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/stack-dev-local.git
     else
         cd $stack_dev_local
@@ -212,7 +212,7 @@ if [[ $username != "" ]]; then
 
     stats="$FCH_CHILE_SDK_FOLDER/stats"
     if [ ! -d "$stats" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/stats.git
     else
         cd $stats
@@ -222,7 +222,7 @@ if [[ $username != "" ]]; then
 
     stream_snapshot="$FCH_CHILE_SDK_FOLDER/stream-snapshot"
     if [ ! -d "$stream_snapshot" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/stream-snapshot.git
     else
         cd $stream_snapshot
@@ -232,7 +232,7 @@ if [[ $username != "" ]]; then
 
     twiki="$FCH_CHILE_SDK_FOLDER/twiki"
     if [ ! -d "$twiki" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
+        cd $TRQ_FUNDACION
         git clone https://patricio.merino@gitlab.com/trq-fundacion/twiki.git
     else
         cd $twiki
