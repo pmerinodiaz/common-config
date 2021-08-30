@@ -4,7 +4,7 @@
 # Want: Get the source repos commons in the local or remote AWS EC2
 # For : Perform developments in their
 
-if [[ ( $# -eq 3 ) ]]; then
+if [[ ( $# -ne 3 ) ]]; then
     echo "There are not Git username."
     echo "Input Git username (Required)"
     read gitusername
@@ -12,10 +12,9 @@ if [[ ( $# -eq 3 ) ]]; then
     echo "Input username (Required)"
     read username
 else
-    username=$1
+    gitusername=$1
+    username=$2
 fi
-
-echo "gitusername=$gitusername"
 
 if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
@@ -48,7 +47,7 @@ if [[ $gitusername != "" && $username != "" ]]; then
     beats_consumer="$TRQ_FUNDACION/beats-consumer"
     if [ ! -d "$beats_consumer" ]; then
         cd $TRQ_FUNDACION
-        git clone https://$gitusername@gitlab.com/trq-fundacion/beats-consumer
+        git clone https://$gitusername@gitlab.com/trq-fundacion/beats-consumer.git
     else
         cd $beats_consumer
         git checkout master
