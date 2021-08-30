@@ -34,7 +34,7 @@ if [[ $username != "" ]]; then
     common_config="$INRIA_CHILE_SDK_FOLDER/common-config"
     if [ ! -d "$common_config" ]; then
         cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-config.git
+        git clone https://github.com/pmerinodiaz/common-config.git
     else
         cd $common_config
         git fetch

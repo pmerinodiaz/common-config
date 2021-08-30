@@ -18,8 +18,8 @@ fi
 
 if [[ $group != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
-    export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
-    export GROUP_FOLDER="$HOME_FOLDER/inria-chile-sdk/$group"
+    export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
+    export GROUP_FOLDER="$HOME_FOLDER/fch-chile-sdk/$group"
     mkdir -p $INRIA_CHILE_SDK_FOLDER
     cd $INRIA_CHILE_SDK_FOLDER
 
@@ -29,7 +29,7 @@ if [[ $group != "" && $username != "" ]]; then
     common_config="$INRIA_CHILE_SDK_FOLDER/common-config"
     if [ ! -d "$common_config" ]; then
         cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-config.git
+        git clone https://github.com/pmerinodiaz/common-config.git
         cd $common_config
         bash clone-repositories.sh $username
     else
