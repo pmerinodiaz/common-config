@@ -14,118 +14,229 @@ fi
 
 if [[ $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
-    export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
-    mkdir -p $INRIA_CHILE_SDK_FOLDER
+    export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
+    export TRQ_FUNDACION="$FCH_CHILE_SDK_FOLDER/trq-fundacion"
+    mkdir -p $TRQ_FUNDACION
 
     git config --global credential.helper store
 
-    common_mlops="$INRIA_CHILE_SDK_FOLDER/common-mlops"
-    if [ ! -d "$common_mlops" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-mlops.git
+    archivist="$TRQ_FUNDACION/archivist"
+    if [ ! -d "$archivist" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/archivist.git
     else
-        cd $common_mlops
-        git checkout dev
+        cd $archivist
+        git checkout master
         git pull
     fi
 
-    common_dvc="$INRIA_CHILE_SDK_FOLDER/common-dvc"
-    if [ ! -d "$common_dvc" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-dvc.git
+    backend="$TRQ_FUNDACION/backend"
+    if [ ! -d "$backend" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/backend.git
     else
-        cd $common_dvc
-        git checkout dev
+        cd $backend
+        git checkout master
         git pull
     fi
 
-    common_compute="$INRIA_CHILE_SDK_FOLDER/common-compute"
-    if [ ! -d "$common_compute" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-compute.git
+    beats_consumer="$TRQ_FUNDACION/beats-consumer"
+    if [ ! -d "$beats_consumer" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/beats-consumer
     else
-        cd $common_compute
-        git checkout dev
+        cd $beats_consumer
+        git checkout master
         git pull
     fi
 
-    common_frontend="$INRIA_CHILE_SDK_FOLDER/common-frontend"
-    if [ ! -d "$common_frontend" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-frontend.git
+    config="$TRQ_FUNDACION/config"
+    if [ ! -d "$config" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/config.git
     else
-        cd $common_frontend
-        git checkout dev
+        cd $config
+        git checkout master
         git pull
     fi
 
-    common_index_builder="$INRIA_CHILE_SDK_FOLDER/common-index-builder"
-    if [ ! -d "$common_index_builder" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-index-builder.git
+    ecourse="$TRQ_FUNDACION/ecourse"
+    if [ ! -d "$ecourse" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/ecourse.git
     else
-        cd $common_index_builder
-        git checkout dev
+        cd $ecourse
+        git checkout master
         git pull
     fi
 
-    common_index_test_cases="$INRIA_CHILE_SDK_FOLDER/common-index-test-cases"
-    if [ ! -d "$common_index_test_cases" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-index-test-cases.git
+    ef="$TRQ_FUNDACION/ef"
+    if [ ! -d "$ef" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/ef.git
     else
-        cd $common_index_test_cases
-        git checkout dev
+        cd $ef
+        git checkout master
         git pull
     fi
 
-    common_pipeline="$INRIA_CHILE_SDK_FOLDER/common-pipeline"
-    if [ ! -d "$common_pipeline" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/common-pipeline.git
+    emac="$FCH_CHILE_SDK_FOLDER/emac"
+    if [ ! -d "$emac" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/emac.git
     else
-        cd $common_pipeline
-        git checkout dev
+        cd $emac
+        git checkout master
         git pull
     fi
 
-    vscode_local="$INRIA_CHILE_SDK_FOLDER/vscode-local"
-    if [ ! -d "$vscode_local" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/vscode-local.git
+    enrichment="$FCH_CHILE_SDK_FOLDER/enrichment"
+    if [ ! -d "$enrichment" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/enrichment.git
     else
-        cd $vscode_local
-        git checkout dev
+        cd $enrichment
+        git checkout master
         git pull
     fi
 
-    vscode_local_remote="$INRIA_CHILE_SDK_FOLDER/vscode-local-remote"
-    if [ ! -d "$vscode_local_remote" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/vscode-local-remote.git
+    fake_beats="$FCH_CHILE_SDK_FOLDER/fake-beats"
+    if [ ! -d "$fake_beats" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/fake-beats.git
     else
-        cd $vscode_local_remote
-        git checkout dev
+        cd $fake_beats
+        git checkout master
         git pull
     fi
 
-    vscode_web="$INRIA_CHILE_SDK_FOLDER/vscode-web"
-    if [ ! -d "$vscode_web" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://gitlab.com/Inria-Chile/vscode-web.git
+    frontend="$FCH_CHILE_SDK_FOLDER/frontend"
+    if [ ! -d "$frontend" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/frontend.git
     else
-        cd $vscode_web
-        git checkout dev
+        cd $frontend
+        git checkout master
         git pull
     fi
 
-    template_data_science="$INRIA_CHILE_SDK_FOLDER/template-data-science"
-    if [ ! -d "$template_data_science" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
-        git clone https://github.com/Inria-Chile/template-data-science.git
+    http_poller_producer="$FCH_CHILE_SDK_FOLDER/http-poller-producer"
+    if [ ! -d "$http_poller_producer" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/http-poller-producer.git
     else
-        cd $template_data_science
-        git checkout dev
+        cd $http_poller_producer
+        git checkout master
+        git pull
+    fi
+
+    index_builder="$FCH_CHILE_SDK_FOLDER/index-builder"
+    if [ ! -d "$index_builder" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/index-builder.git
+    else
+        cd $index_builder
+        git checkout master
+        git pull
+    fi
+
+    index_test_cases="$FCH_CHILE_SDK_FOLDER/index-test-cases"
+    if [ ! -d "$index_test_cases" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/index-test-cases.git
+    else
+        cd $index_test_cases
+        git checkout master
+        git pull
+    fi
+
+    qa_load_testing="$FCH_CHILE_SDK_FOLDER/qa-load-testing"
+    if [ ! -d "$qa_load_testing" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/qa-load-testing.git
+    else
+        cd $qa_load_testing
+        git checkout master
+        git pull
+    fi
+
+    qa_snapshots="$FCH_CHILE_SDK_FOLDER/qa-snapshots"
+    if [ ! -d "$qa_snapshots" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/qa-snapshots.git
+    else
+        cd $qa_snapshots
+        git checkout master
+        git pull
+    fi
+
+    qa_testing_framework="$FCH_CHILE_SDK_FOLDER/qa-testing-framework"
+    if [ ! -d "$qa_testing_framework" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/qa-testing-framework.git
+    else
+        cd $qa_testing_framework
+        git checkout master
+        git pull
+    fi
+
+    qa_testing_framework_ci="$FCH_CHILE_SDK_FOLDER/qa-testing-framework-ci"
+    if [ ! -d "$qa_testing_framework_ci" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/qa-testing-framework-ci.git
+    else
+        cd $qa_testing_framework_ci
+        git checkout master
+        git pull
+    fi
+
+    sql_beats_producer="$FCH_CHILE_SDK_FOLDER/sql-beats-producer"
+    if [ ! -d "$sql_beats_producer" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/sql-beats-producer.git
+    else
+        cd $sql_beats_producer
+        git checkout master
+        git pull
+    fi
+
+    stack_dev_local="$FCH_CHILE_SDK_FOLDER/stack-dev-local"
+    if [ ! -d "$stack_dev_local" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/stack-dev-local.git
+    else
+        cd $stack_dev_local
+        git checkout master
+        git pull
+    fi
+
+    stats="$FCH_CHILE_SDK_FOLDER/stats"
+    if [ ! -d "$stats" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/stats.git
+    else
+        cd $stats
+        git checkout master
+        git pull
+    fi
+
+    stream_snapshot="$FCH_CHILE_SDK_FOLDER/stream-snapshot"
+    if [ ! -d "$stream_snapshot" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/stream-snapshot.git
+    else
+        cd $stream_snapshot
+        git checkout master
+        git pull
+    fi
+
+    twiki="$FCH_CHILE_SDK_FOLDER/twiki"
+    if [ ! -d "$twiki" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://gitlab.com/trq-fundacion/twiki.git
+    else
+        cd $twiki
+        git checkout master
         git pull
     fi
 
@@ -137,7 +248,7 @@ if [[ $username != "" ]]; then
     fi
 
     if [ "$answer" != "${answer#[Yy]}" ]; then
-        cd $common_mlops
+        cd $backend
         python3 -m venv venv
         source venv/bin/activate
         pip3 install -r requirements.txt

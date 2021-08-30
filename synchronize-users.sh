@@ -32,7 +32,7 @@ for val in $mem_list; do
     git config --global credential.helper store
 
     HOME_FOLDER="/home/$val"
-    common_config="$HOME_FOLDER/inria-chile-sdk/common-config"
+    common_config="$HOME_FOLDER/fch-chile-sdk/common-config"
 
     echo "group: $group"
 

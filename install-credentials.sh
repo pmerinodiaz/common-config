@@ -35,11 +35,11 @@ if [[ $access_key_id != "" && $secret_access_key != "" && $username != "" && $gr
         export access_key_id=$access_key_id
         export secret_access_key=$secret_access_key
         export HOME_FOLDER="/home/$username"
-        export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
-        export GROUP_FOLDER="$INRIA_CHILE_SDK_FOLDER/$group"
-        cd $INRIA_CHILE_SDK_FOLDER/common-mlops
-        ./install.sh $access_key_id $secret_access_key $username $group
-        cd $GROUP_FOLDER/data-read
-        ./install.sh $access_key_id $secret_access_key $username $group
+        export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
+        export GROUP_FOLDER="$FCH_CHILE_SDK_FOLDER/$group"
+        # cd $FCH_CHILE_SDK_FOLDER/common-mlops
+        # ./install.sh $access_key_id $secret_access_key $username $group
+        # cd $GROUP_FOLDER/data-read
+        # ./install.sh $access_key_id $secret_access_key $username $group
     fi
 fi
