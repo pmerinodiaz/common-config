@@ -4,9 +4,12 @@
 # Want: Configure the current user account in the local or remote AWS EC2. Clone repos, configure AWS S3 credentials and configure ssh-keygen to use Gitlab.
 # For : Start to use the user account
 
-if [[ ( $# -eq 4 ) ]]; then
+if [[ ( $# -eq 5 ) ]]; then
+    echo "There are not Git username."
+    echo "Input Git username (Required)"
+    read gitusername
     echo "There are not group."
-    echo "Input group (Mandatory)"
+    echo "Input group (Required)"
     read GROUP
     echo "There are not access_key_id."
     echo "Input access_key_id (Required)"
@@ -16,14 +19,15 @@ if [[ ( $# -eq 4 ) ]]; then
     read SECRET_ACCESS_KEY
 
 else
-    GROUP=$1
-    ACCESS_KEY_ID=$2
-    SECRET_ACCESS_KEY=$3
+    gitusername=$1
+    GROUP=$2
+    ACCESS_KEY_ID=$3
+    SECRET_ACCESS_KEY=$4
 fi
 
 username=${SUDO_USER:-$USER}
 
-if [[ $username != "" ]]; then
+if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
     export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
     mkdir -p $INRIA_CHILE_SDK_FOLDER
@@ -42,7 +46,7 @@ if [[ $username != "" ]]; then
         git pull
     fi
     cd $INRIA_CHILE_SDK_FOLDER
-    bash common-config/clone-repositories.sh $username
+    bash common-config/clone-repositories.sh $gitusername $username
     if [[ $GROUP != "" ]]; then
         export GROUP_FOLDER="$INRIA_CHILE_SDK_FOLDER/$GROUP"
         mkdir -p $GROUP_FOLDER
@@ -58,7 +62,7 @@ if [[ $username != "" ]]; then
             git pull
         fi
         cd $GROUP_FOLDER
-        bash config/clone-repositories.sh $GROUP $username
+        bash config/clone-repositories.sh $gitusername $GROUP $username
 
         if [[ $ACCESS_KEY_ID != "" && $SECRET_ACCESS_KEY != "" ]]; then
             cd $GROUP_FOLDER

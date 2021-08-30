@@ -29,14 +29,14 @@ if [[ $group != "" && $username != "" && $access_key_id != "" && $secret_access_
     export secret_access_key=$secret_access_key
 
     export HOME_FOLDER="/home/$username"
-    export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
-    mkdir -p $INRIA_CHILE_SDK_FOLDER
-    mypasswordfile="$INRIA_CHILE_SDK_FOLDER/mypasswordfile"
+    export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
+    mkdir -p $FCH_CHILE_SDK_FOLDER
+    mypasswordfile="$FCH_CHILE_SDK_FOLDER/mypasswordfile"
 
     touch $mypasswordfile
-    echo "inria" > $mypasswordfile
+    echo "fch" > $mypasswordfile
 
-    cd $INRIA_CHILE_SDK_FOLDER
+    cd $FCH_CHILE_SDK_FOLDER
 
     git config --global credential.helper store
     git clone https://gitlab.com/Inria-Chile/vscode-local-remote.git
