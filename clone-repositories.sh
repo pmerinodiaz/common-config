@@ -15,6 +15,8 @@ else
     username=$1
 fi
 
+echo "gitusername=$gitusername"
+
 if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
     export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
