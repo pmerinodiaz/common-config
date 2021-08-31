@@ -24,6 +24,16 @@ if [[ $gitusername != "" && $username != "" ]]; then
 
     git config --global credential.helper store
 
+    stack_dev_local="$TRQ_FUNDACION/backup-storage"
+    if [ ! -d "$stack_dev_local" ]; then
+        cd $FCH_CHILE_SDK_FOLDER
+        git clone https://$gitusername@gitlab.com/trq-fundacion/stack-dev-local.git tranque
+    else
+        cd $TRQ_FUNDACION
+        git checkout master
+        git pull
+    fi
+
     archivist="$TRQ_FUNDACION/archivist"
     if [ ! -d "$archivist" ]; then
         cd $TRQ_FUNDACION
@@ -200,16 +210,6 @@ if [[ $gitusername != "" && $username != "" ]]; then
         git clone https://$gitusername@gitlab.com/trq-fundacion/sql-beats-producer.git
     else
         cd $sql_beats_producer
-        git checkout master
-        git pull
-    fi
-
-    stack_dev_local="$FCH_CHILE_SDK_FOLDER/stack-dev-local"
-    if [ ! -d "$stack_dev_local" ]; then
-        cd $TRQ_FUNDACION
-        git clone https://$gitusername@gitlab.com/trq-fundacion/stack-dev-local.git
-    else
-        cd $stack_dev_local
         git checkout master
         git pull
     fi
