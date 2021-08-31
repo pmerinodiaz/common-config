@@ -62,7 +62,7 @@ if [[ $gitusername != "" && $username != "" ]]; then
             git pull
         fi
         cd $GROUP_FOLDER
-        bash config/clone-repositories.sh $gitusername $GROUP $username
+        #bash config/clone-repositories.sh $gitusername $GROUP $username
 
         if [[ $ACCESS_KEY_ID != "" && $SECRET_ACCESS_KEY != "" ]]; then
             cd $GROUP_FOLDER
