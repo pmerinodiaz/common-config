@@ -29,15 +29,15 @@ username=${SUDO_USER:-$USER}
 
 if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
-    export INRIA_CHILE_SDK_FOLDER="$HOME_FOLDER/inria-chile-sdk"
-    mkdir -p $INRIA_CHILE_SDK_FOLDER
+    export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
+    mkdir -p $FCH_CHILE_SDK_FOLDER
 
     git config --global credential.helper store
     
     # 8.1. Clone the repositories and install credentials of AWS
-    common_config="$INRIA_CHILE_SDK_FOLDER/common-config"
+    common_config="$FCH_CHILE_SDK_FOLDER/common-config"
     if [ ! -d "$common_config" ]; then
-        cd $INRIA_CHILE_SDK_FOLDER
+        cd $FCH_CHILE_SDK_FOLDER
         git clone https://github.com/pmerinodiaz/common-config.git
     else
         cd $common_config
@@ -45,16 +45,16 @@ if [[ $gitusername != "" && $username != "" ]]; then
         git checkout dev
         git pull
     fi
-    cd $INRIA_CHILE_SDK_FOLDER
+    cd $FCH_CHILE_SDK_FOLDER
     bash common-config/clone-repositories.sh $gitusername $username
     if [[ $GROUP != "" ]]; then
-        export GROUP_FOLDER="$INRIA_CHILE_SDK_FOLDER/$GROUP"
+        export GROUP_FOLDER="$FCH_CHILE_SDK_FOLDER/$GROUP"
         mkdir -p $GROUP_FOLDER
         config="$GROUP_FOLDER/config"
         if [ ! -d "$config" ]; then
             cd $GROUP_FOLDER
-            echo "You need to have a https://gitlab.com/Inria-Chile/$GROUP/config/clone-repositories.sh with the git commands for clone repos of $GROUP"
-            git clone https://gitlab.com/Inria-Chile/$GROUP/config.git
+            echo "You need to have a https://gitlab.com/$GROUP/config/clone-repositories.sh with the git commands for clone repos of $GROUP"
+            git clone https://gitlab.com/$GROUP/config.git
         else
             cd $config
             git fetch
@@ -66,7 +66,7 @@ if [[ $gitusername != "" && $username != "" ]]; then
 
         if [[ $ACCESS_KEY_ID != "" && $SECRET_ACCESS_KEY != "" ]]; then
             cd $GROUP_FOLDER
-            echo "You need to have the https://gitlab.com/Inria-Chile/common-config/install-credentials.sh with the aws commands for create credentials of $GROUP"
+            echo "You need to have the https://github.com/pmerinodiaz/common-config/install-credentials.sh with the aws commands for create credentials of $GROUP"
             bash install-credentials.sh $ACCESS_KEY_ID $SECRET_ACCESS_KEY $username $GROUP
         fi
     fi
