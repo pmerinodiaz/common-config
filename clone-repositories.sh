@@ -19,7 +19,7 @@ fi
 if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
     export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
-    export TRQ_FUNDACION="$FCH_CHILE_SDK_FOLDER/trq-fundacion"
+    export TRQ_FUNDACION="$FCH_CHILE_SDK_FOLDER/tranque"
     mkdir -p $TRQ_FUNDACION
 
     git config --global credential.helper store
