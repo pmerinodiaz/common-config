@@ -43,11 +43,11 @@ if [[ $group != "" && $username != "" ]]; then
     group_config="$INRIA_CHILE_SDK_FOLDER/$group/config"
     if [ ! -d "$group_config" ]; then
         cd $GROUP_FOLDER
-        git clone https://gitlab.com/Inria-Chile/$group/config.git
+        git clone https://gitlab.com/$group/config.git
     else
         cd $group_config
         git fetch
-        git checkout dev
+        git checkout master
         git pull
     fi
 

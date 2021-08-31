@@ -42,7 +42,7 @@ if [[ $gitusername != "" && $username != "" ]]; then
     else
         cd $common_config
         git fetch
-        git checkout dev
+        git checkout main
         git pull
     fi
     cd $FCH_CHILE_SDK_FOLDER
@@ -58,7 +58,7 @@ if [[ $gitusername != "" && $username != "" ]]; then
         else
             cd $config
             git fetch
-            git checkout dev
+            git checkout master
             git pull
         fi
         cd $GROUP_FOLDER
