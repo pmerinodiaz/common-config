@@ -8,8 +8,8 @@ if [[ ( $# -ne 3 ) ]]; then
     echo "There are not Gitlab username."
     echo "Input Gitlab username (Required. For example: dhidalgo.hd fundacionchile ohernandezm patricio.merino)"
     read gitusername
-    echo "There are not username."
-    echo "Input username (Required)"
+    echo "There are not SO username."
+    echo "Input SO username (Required)"
     read username
 else
     gitusername=$1
