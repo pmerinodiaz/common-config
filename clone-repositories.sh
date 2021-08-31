@@ -5,8 +5,8 @@
 # For : Perform developments in their
 
 if [[ ( $# -ne 3 ) ]]; then
-    echo "There are not Git username."
-    echo "Input Git username (Required)"
+    echo "There are not Gitlab username."
+    echo "Input Gitlab username (Required. For example: dhidalgo.hd fundacionchile ohernandezm patricio.merino)"
     read gitusername
     echo "There are not username."
     echo "Input username (Required)"

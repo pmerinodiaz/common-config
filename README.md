@@ -20,15 +20,6 @@ sudo bash config-user.sh <group> datascientist <access_key_id> <secret_access_ke
 
 # Configure the current user
 
-Configuring the current executed user in the environment. Clones the repositories of the group, install the credentials,
-configure SSH and change the permission of the home folder:
-
-```sh
-sudo bash configure-user.sh <group> <access_key_id> <secret_access_key>
-```
-
-# Configure the current user
-
 Create a new user in the environment. Inputs the password and grants the permissions in the group:
 
 ```sh
