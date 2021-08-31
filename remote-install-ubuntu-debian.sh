@@ -53,3 +53,10 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update -y
 sudo apt install yarn
 sudo npm -g install create-react-app
+
+# 1.8. Install Kubectl
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
