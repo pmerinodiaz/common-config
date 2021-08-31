@@ -6,7 +6,7 @@
 
 if [[ ( $# -ne 2 ) ]]; then
     echo "There are not Gitlab username."
-    echo "Input Gitlab username (Required. For example: dhidalgo.hd fundacionchile ohernandezm patricio.merino)"
+    echo "Input Gitlab username (Required)"
     read gitusername
     echo "There are not SO username."
     echo "Input SO username (Required)"
