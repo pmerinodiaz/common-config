@@ -4,7 +4,7 @@
 # Want: Get the source repos commons in the local or remote AWS EC2
 # For : Perform developments in their
 
-if [[ ( $# -ne 3 ) ]]; then
+if [[ ( $# -ne 2 ) ]]; then
     echo "There are not Gitlab username."
     echo "Input Gitlab username (Required. For example: dhidalgo.hd fundacionchile ohernandezm patricio.merino)"
     read gitusername

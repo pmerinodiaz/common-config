@@ -4,25 +4,17 @@
 # Want: Configure the current user account in the local or remote AWS EC2. Clone repos, configure AWS S3 credentials and configure ssh-keygen to use Gitlab.
 # For : Start to use the user account
 
-if [[ ( $# -eq 5 ) ]]; then
+if [[ ( $# -ne 2 ) ]]; then
     echo "There are not Git username."
     echo "Input Git username (Required)"
     read gitusername
     echo "There are not group."
     echo "Input group (Required)"
     read GROUP
-    echo "There are not access_key_id."
-    echo "Input access_key_id (Required)"
-    read ACCESS_KEY_ID
-    echo "There are not secret_access_key."
-    echo "Input secret_access_key (Required)"
-    read SECRET_ACCESS_KEY
 
 else
     gitusername=$1
     GROUP=$2
-    ACCESS_KEY_ID=$3
-    SECRET_ACCESS_KEY=$4
 fi
 
 username=${SUDO_USER:-$USER}
@@ -63,12 +55,6 @@ if [[ $gitusername != "" && $username != "" ]]; then
         fi
         cd $GROUP_FOLDER
         #bash config/clone-repositories.sh $gitusername $GROUP $username
-
-        if [[ $ACCESS_KEY_ID != "" && $SECRET_ACCESS_KEY != "" ]]; then
-            cd $GROUP_FOLDER
-            echo "You need to have the https://github.com/pmerinodiaz/common-config/install-credentials.sh with the aws commands for create credentials of $GROUP"
-            bash install-credentials.sh $ACCESS_KEY_ID $SECRET_ACCESS_KEY $username $GROUP
-        fi
     fi
 
     answer="y"
