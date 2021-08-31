@@ -35,3 +35,6 @@ echo "Yarn: $yarn_version"
 
 create_react_app_version=$(create-react-app --version)
 echo "Create-react-app: $create_react_app_version"
+
+kubectl_version=$(kubectl version --client)
+echo "Kubectl: $kubectl_version"
