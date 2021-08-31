@@ -25,8 +25,8 @@ if [[ $USERNAME != "" ]]; then
         config="$GROUP_FOLDER/config"
         if [ ! -d "$config" ]; then
             cd $GROUP_FOLDER
-            echo "You need to have a https://gitlab.com/Inria-Chile/$GROUP/config/clone-repositories.sh with the git commands for clone repos of $GROUP"
-            git clone https://gitlab.com/Inria-Chile/$GROUP/config.git
+            echo "You need to have a https://gitlab.com/$GROUP/config/clone-repositories.sh with the git commands for clone repos of $GROUP"
+            git clone https://gitlab.com/$GROUP/config.git
         else
             cd $config
             git fetch
