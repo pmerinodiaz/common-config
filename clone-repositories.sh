@@ -19,17 +19,17 @@ fi
 if [[ $gitusername != "" && $username != "" ]]; then
     export HOME_FOLDER="/home/$username"
     export FCH_CHILE_SDK_FOLDER="$HOME_FOLDER/fch-chile-sdk"
-    export TRQ_FUNDACION="$FCH_CHILE_SDK_FOLDER/tranque"
+    export TRQ_FUNDACION="$FCH_CHILE_SDK_FOLDER/trq-fundacion"
     mkdir -p $TRQ_FUNDACION
 
     git config --global credential.helper store
 
-    stack_dev_local="$TRQ_FUNDACION/backup-storage"
+    stack_dev_local="$TRQ_FUNDACION/stack-dev-local"
     if [ ! -d "$stack_dev_local" ]; then
-        cd $FCH_CHILE_SDK_FOLDER
-        git clone https://$gitusername@gitlab.com/trq-fundacion/stack-dev-local.git tranque
-    else
         cd $TRQ_FUNDACION
+        git clone https://$gitusername@gitlab.com/trq-fundacion/stack-dev-local.git
+    else
+        cd $stack_dev_local
         git checkout master
         git pull
     fi
