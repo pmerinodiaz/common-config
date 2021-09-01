@@ -34,22 +34,32 @@ if [[ $gitusername != "" && $username != "" ]]; then
         git pull
     fi
 
+    backend="$stack_dev_local/backend"
+    if [ ! -d "$backend" ]; then
+        cd $stack_dev_local
+        git clone https://$gitusername@gitlab.com/trq-fundacion/backend.git
+    else
+        cd $backend
+        git checkout master
+        git pull
+    fi
+
+    frontend="$stack_dev_local/frontend"
+    if [ ! -d "$frontend" ]; then
+        cd $stack_dev_local
+        git clone https://$gitusername@gitlab.com/trq-fundacion/frontend.git
+    else
+        cd $frontend
+        git checkout master
+        git pull
+    fi
+
     archivist="$TRQ_FUNDACION/archivist"
     if [ ! -d "$archivist" ]; then
         cd $TRQ_FUNDACION
         git clone https://$gitusername@gitlab.com/trq-fundacion/archivist.git
     else
         cd $archivist
-        git checkout master
-        git pull
-    fi
-
-    backend="$TRQ_FUNDACION/backend"
-    if [ ! -d "$backend" ]; then
-        cd $TRQ_FUNDACION
-        git clone https://$gitusername@gitlab.com/trq-fundacion/backend.git
-    else
-        cd $backend
         git checkout master
         git pull
     fi
@@ -120,16 +130,6 @@ if [[ $gitusername != "" && $username != "" ]]; then
         git clone https://$gitusername@gitlab.com/trq-fundacion/fake-beats.git
     else
         cd $fake_beats
-        git checkout master
-        git pull
-    fi
-
-    frontend="$FCH_CHILE_SDK_FOLDER/frontend"
-    if [ ! -d "$frontend" ]; then
-        cd $TRQ_FUNDACION
-        git clone https://$gitusername@gitlab.com/trq-fundacion/frontend.git
-    else
-        cd $frontend
         git checkout master
         git pull
     fi
